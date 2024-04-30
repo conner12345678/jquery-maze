@@ -53,6 +53,18 @@ $(document).ready(function(){
                 $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
                 $('#maze').append('<div class="wall" id="wall4' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
             }
+            if(playerX === 100 && playerY == 760){
+                var final = points - Number(document.getElementById('timer').innerHTML)
+                points = final
+                setTimeout(() => {
+                    alert("Congratulations you made it to the end, but there is no real escape because... the cake is a lie! Final points: " + final + '. BTW have fun in this box there is no way out without restarting the maze. :)')
+                }, 500);
+                start = 0
+                $('#end').css('top', '760px')
+                $('#end').css('left', '100px')
+                $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 760 + 'px; left: ' + 100 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="wall4' + '" style="top: ' + 720 + 'px; left: ' + 140 + 'px;"></div>')
+            }
         }
     }
 
@@ -838,15 +850,25 @@ $(document).ready(function(){
         //row 1
         {top:500, left:940},
         {top:500, left:980},
+        {top:500, left:700},
+        {top:500, left:580},
         //row 2
         {top:520, left:940},
         {top:520, left:980},
+        {top:520, left:700},
+        {top:520, left:660},
+        {top:520, left:640},
+        {top:520, left:620},
+        {top:520, left:600},
+        {top:520, left:580},
         //row 3
         {top:540, left:940},
         {top:540, left:980},
         {top:540, left:920},
         {top:540, left:900},
         {top:540, left:880},
+        {top:540, left:700},
+        {top:540, left:660},
         //row 4
         {top:560, left:980},
         {top:560, left:880},
@@ -856,6 +878,11 @@ $(document).ready(function(){
         {top:560, left:800},
         {top:560, left:780},
         {top:560, left:760},
+        {top:560, left:740},
+        {top:560, left:720},
+        {top:560, left:700},
+        {top:560, left:660},
+        {top:560, left:640},
         //row 5
         {top:580, left:940},
         {top:580, left:980},
@@ -863,6 +890,7 @@ $(document).ready(function(){
         {top:580, left:1000},
         {top:580, left:1020},
         {top:580, left:1060},
+        {top:580, left:640},
         //row 6
         {top:600, left:940},
         {top:600, left:920},
@@ -874,10 +902,12 @@ $(document).ready(function(){
         {top:600, left:780},
         {top:600, left:760},
         {top:600, left:1060},
+        {top:600, left:640},
         //row 7
         {top:620, left:980},
         {top:620, left:760},
         {top:620, left:1060},
+        {top:620, left:640},
         //row 8
         {top:640, left:980},
         {top:640, left:960},
@@ -891,10 +921,12 @@ $(document).ready(function(){
         {top:640, left:800},
         {top:640, left:760},
         {top:640, left:1060},
+        {top:640, left:640},
         //row 9 
         {top:660, left:760},
         {top:660, left:800},
         {top:660, left:1060},
+        {top:660, left:640},
         //row 10
         {top:680, left:760},
         {top:680, left:800},
