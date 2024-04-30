@@ -14,6 +14,8 @@ $(document).ready(function(){
     var beamY = playerY
     var beamX = playerX
 
+    //stop loop var
+    var win = 0
     //move function for player
     function move_player(dx, dy) {
         var newX = playerX + dx
@@ -38,8 +40,8 @@ $(document).ready(function(){
                 start = 0
                 $('#end').css('top', '480px')
                 $('#end').css('left', '960px')
-                $('#maze').append('<div class="wall" id="wall1' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
-                $('#maze').append('<div class="wall" id="wall2' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
             }
             if(playerX === 960 && playerY == 480){
                 var final = points - Number(document.getElementById('timer').innerHTML)
@@ -50,20 +52,27 @@ $(document).ready(function(){
                 start = 0
                 $('#end').css('top', '760px')
                 $('#end').css('left', '100px')
-                $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
-                $('#maze').append('<div class="wall" id="wall4' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
             }
-            if(playerX === 100 && playerY == 760){
+            if((playerX === 100 && playerY == 760) && !win >= 1){
                 var final = points - Number(document.getElementById('timer').innerHTML)
                 points = final
                 setTimeout(() => {
-                    alert("Congratulations you made it to the end, but there is no real escape because... the cake is a lie! Final points: " + final + '. BTW have fun in this box there is no way out without restarting the maze. :)')
+                    alert("Congratulations you made it to the end, but there is no real escape because... the cake is a lie! Final points: " + final)
+                    playerX = 40
+                    playerY = 0
+                    $('#walls').remove()
+                    $('#player').css('top', playerY + 'px')
+                    $('#player').css('left', playerX + 'px')
+                    win = 0
+                    final = 2000
                 }, 500);
                 start = 0
+                $('#leaderboard').append('<h1>Points:' + final + '</h1>')
                 $('#end').css('top', '760px')
                 $('#end').css('left', '100px')
-                $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 760 + 'px; left: ' + 100 + 'px;"></div>')
-                $('#maze').append('<div class="wall" id="wall4' + '" style="top: ' + 720 + 'px; left: ' + 140 + 'px;"></div>')
+                win++
             }
         }
     }
