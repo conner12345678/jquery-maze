@@ -197,7 +197,7 @@ $(document).ready(function(){
     })
     $(document).keyup(function(e){
         switch(e.which){
-            case 81:
+            case 16:
                 delete_beam()
         }
     })
