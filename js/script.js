@@ -64,7 +64,7 @@ $(document).ready(function(){
         if(player_dir === 1){
             beamX = playerX-40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px;  width: 20px; height: 20px; z-index: 2;"></div>');
                 $('#s_beam').animate({
                     width: '60px',
                     height: '20px'
@@ -88,7 +88,11 @@ $(document).ready(function(){
         if(player_dir === 2){
             beamY = playerY-40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px;  width: 20px; height: 20px; z-index: 2;"></div>');
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
                 beam_count--
             }
@@ -108,7 +112,7 @@ $(document).ready(function(){
         if(player_dir === 3){
             beamX = playerX+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px;  width: 20px; height: 20px; z-index: 2;"></div>')
                 $('#s_beam').animate({
                     width: '60px',
                     height: '20px'
@@ -132,7 +136,11 @@ $(document).ready(function(){
         if(player_dir === 4){
             beamY = playerY+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px;  width: 20px; height: 20px; z-index: 2;"></div>')
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
                 beam_count--
             }
