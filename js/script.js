@@ -40,8 +40,8 @@ $(document).ready(function(){
                 start = 0
                 $('#end').css('top', '480px')
                 $('#end').css('left', '960px')
-                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
-                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls1' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls2' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
             }
             if(playerX === 960 && playerY == 480){
                 var final = points - Number(document.getElementById('timer').innerHTML)
@@ -52,8 +52,8 @@ $(document).ready(function(){
                 start = 0
                 $('#end').css('top', '760px')
                 $('#end').css('left', '100px')
-                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
-                $('#maze').append('<div class="wall" id="walls' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls3' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="walls4' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
             }
             if((playerX === 100 && playerY == 760) && !win >= 1){
                 var final = points - Number(document.getElementById('timer').innerHTML)
@@ -62,7 +62,10 @@ $(document).ready(function(){
                     alert("Congratulations you made it to the end, but there is no real escape because... the cake is a lie! Final points: " + final)
                     playerX = 40
                     playerY = 0
-                    $('#walls').remove()
+                    $('#walls1').remove()
+                    $('#walls2').remove()
+                    $('#walls3').remove()
+                    $('#walls4').remove()
                     $('#player').css('top', playerY + 'px')
                     $('#player').css('left', playerX + 'px')
                     win = 0
