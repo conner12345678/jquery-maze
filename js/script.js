@@ -51,9 +51,12 @@ $(document).ready(function(){
             $("#player").css('transform', 'rotate(180deg)')
             beamX = playerX-40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>');
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -73,9 +76,12 @@ $(document).ready(function(){
             beamY = playerY-40
             if(beam_count < 2){
                 $("#player").css('transform', 'rotate(180deg)')
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 60px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>');
+                $('#s_beam').animate({
+                    width: '20px',
+                    height: '60px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -95,9 +101,12 @@ $(document).ready(function(){
             $("#player").css('transform', 'rotate(0deg)')
             beamX = playerX+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>')
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -117,9 +126,12 @@ $(document).ready(function(){
             $("#player").css('transform', 'rotate(0deg)')
             beamY = playerY+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 60px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>')
+                $('#s_beam').animate({
+                    width: '20px',
+                    height: '60px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
