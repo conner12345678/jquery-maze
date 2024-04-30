@@ -1,6 +1,8 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: black;
+    color: white;
 }
 #maze{
     margin: 20px auto;
@@ -8,17 +10,18 @@ body{
     height: 800px;
     border: 2px solid black;
     position: relative;
+    background-color: rgb(43, 43, 43);
 }
 .wall, #start, #end{
     width: 20px;
     height: 20px;
-    background-color: black;
+    background-color: rgb(51, 64, 81);
     position: absolute;
 }
 
-// .wall{
-//     visibility: hidden;
-// }
+.wall{
+    visibility: hidden;
+}
 
 
 #wall1{
@@ -51,10 +54,11 @@ body{
 .player{
     width: 20px;
     height: 20px;
-    background-color: blue;
+    // background-color: blue;
     position: absolute;
-    transition: all 1s ease;
+    transition: all .5s ease;
+    background-image: url(../New\ Piskel-1.png.png);
     #s_beam {
-        transition: all .5s ease;
+        transition: all .25s ease;
     }
 }

@@ -1,3 +1,7 @@
+var start = 0; 
+setInterval(function() { $('.Timer').text((start += 1)); }, 1000);
+var points = 2000
+
 $(document).ready(function(){
     //maze size/dimention
     var maze_height = 800
@@ -26,14 +30,24 @@ $(document).ready(function(){
             }
             //Check to see if the player reaches the end
             if(playerX === 480 && playerY === 220){
-                alert("congradulations you made it through the first level")
+                var final = points - Number(document.getElementById('timer').innerHTML)
+                points = final
+                setTimeout(() => {
+                    alert("Congratulations you made it through the first level. Points so far: " + final)
+                }, 500);
+                start = 0
                 $('#end').css('top', '480px')
                 $('#end').css('left', '960px')
                 $('#maze').append('<div class="wall" id="wall1' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
                 $('#maze').append('<div class="wall" id="wall2' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
             }
             if(playerX === 960 && playerY == 480){
-                alert("Congradulations you made it through level two! Here is the final stretch...")
+                var final = points - Number(document.getElementById('timer').innerHTML)
+                points = final
+                setTimeout(() => {
+                    alert("Congratulations you made it through level two! Here is the final stretch...  Points so far: " + final)
+                }, 500);
+                start = 0
                 $('#end').css('top', '760px')
                 $('#end').css('left', '100px')
                 $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
@@ -50,9 +64,12 @@ $(document).ready(function(){
         if(player_dir === 1){
             beamX = playerX-40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>');
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -73,7 +90,6 @@ $(document).ready(function(){
             if(beam_count < 2){
                 $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -92,9 +108,12 @@ $(document).ready(function(){
         if(player_dir === 3){
             beamX = playerX+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 20px; z-index: 2;"></div>')
+                $('#s_beam').animate({
+                    width: '60px',
+                    height: '20px'
+                }, 100);
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -115,7 +134,6 @@ $(document).ready(function(){
             if(beam_count < 2){
                 $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
             }else if(beam_count == 2){
-                $('#s_beam').remove()
                 beam_count--
             }
     
@@ -164,14 +182,14 @@ $(document).ready(function(){
                 delete_beam()
                 player_dir = 4
                 break;
-            case 81: //number one
+            case 16: //number one
                 shoot_beam()
                 break;
         }
     })
     $(document).keyup(function(e){
         switch(e.which){
-            case 81:
+            case 16:
                 delete_beam()
         }
     })
