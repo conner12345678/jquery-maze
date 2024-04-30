@@ -50,4 +50,8 @@ body {
   height: 20px;
   background-color: blue;
   position: absolute;
+  transition: all 1s ease;
+}
+.player #s_beam {
+  transition: all 0.5s ease;
 }/*# sourceMappingURL=styles.css.map */
