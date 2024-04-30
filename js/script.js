@@ -48,7 +48,6 @@ $(document).ready(function(){
     function shoot_beam() {
         beam_count++
         if(player_dir === 1){
-            $("#player").css('transform', 'rotate(180deg)')
             beamX = playerX-40
             if(beam_count < 2){
                 $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
@@ -72,8 +71,7 @@ $(document).ready(function(){
         if(player_dir === 2){
             beamY = playerY-40
             if(beam_count < 2){
-                $("#player").css('transform', 'rotate(180deg)')
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 60px; z-index: 2;"></div>');
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>');
             }else if(beam_count == 2){
                 $('#s_beam').remove()
                 beam_count--
@@ -92,7 +90,6 @@ $(document).ready(function(){
             }
         }
         if(player_dir === 3){
-            $("#player").css('transform', 'rotate(0deg)')
             beamX = playerX+40
             if(beam_count < 2){
                 $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
@@ -114,10 +111,9 @@ $(document).ready(function(){
             }
         }
         if(player_dir === 4){
-            $("#player").css('transform', 'rotate(0deg)')
             beamY = playerY+40
             if(beam_count < 2){
-                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 20px; height: 60px; z-index: 2;"></div>')
+                $('#player').append('<div class="s_beam" id="s_beam" style="top: ' + beamY + 'px; left: ' + beamX + 'px; background-color: red; width: 60px; height: 20px; z-index: 2;"></div>')
             }else if(beam_count == 2){
                 $('#s_beam').remove()
                 beam_count--
@@ -145,21 +141,25 @@ $(document).ready(function(){
     $(document).keydown(function(e){
         switch(e.which){
             case 65: //a key
+                $("#player").css('transform', 'rotate(180deg)')
                 move_player(-20, 0)
                 delete_beam()
                 player_dir = 1
                 break;
             case 87: //w key
+                $("#player").css('transform', 'rotate(-90deg)')
                 move_player(0, -20)
                 delete_beam()
                 player_dir = 2
                 break;
             case 68: //d key
+                $("#player").css('transform', 'rotate(0deg)')
                 move_player(20, 0)
                 delete_beam()
                 player_dir = 3
                 break;
             case 83: //s key
+                $("#player").css('transform', 'rotate(90deg)')
                 move_player(0, 20)
                 delete_beam()
                 player_dir = 4
@@ -824,6 +824,12 @@ $(document).ready(function(){
         //row 4
         {top:560, left:980},
         {top:560, left:880},
+        {top:560, left:860},
+        {top:560, left:840},
+        {top:560, left:820},
+        {top:560, left:800},
+        {top:560, left:780},
+        {top:560, left:760},
         //row 5
         {top:580, left:940},
         {top:580, left:980},
@@ -877,6 +883,34 @@ $(document).ready(function(){
         {top:680, left:940},
         {top:680, left:920},
         {top:680, left:900},
+        {top:680, left:640},
+        {top:680, left:620},
+        {top:680, left:600},
+        {top:680, left:580},
+        {top:680, left:560},
+        {top:680, left:540},
+        {top:680, left:520},
+        {top:680, left:500},
+        {top:680, left:480},
+        {top:680, left:460},
+        {top:680, left:440},
+        {top:680, left:420},
+        {top:680, left:400},
+        {top:680, left:380},
+        {top:680, left:360},
+        {top:680, left:340},
+        {top:680, left:320},
+        {top:680, left:300},
+        {top:680, left:280},
+        {top:680, left:260},
+        {top:680, left:240},
+        {top:680, left:220},
+        {top:680, left:200},
+        {top:680, left:180},
+        {top:680, left:160},
+        {top:680, left:140},
+        {top:680, left:120},
+        {top:680, left:100},
         //row 11
         {top:700, left:60},
         {top:700, left:80},
@@ -886,6 +920,7 @@ $(document).ready(function(){
         {top:700, left:760},
         {top:700, left:860},
         {top:700, left:900},
+        {top:700, left:640},
         //row 12
         {top:720, left:60},
         {top:720, left:760},
@@ -900,6 +935,22 @@ $(document).ready(function(){
         {top:720, left:460},
         {top:720, left:440},
         {top:720, left:420},
+        {top:720, left:400},
+        {top:720, left:380},
+        {top:720, left:360},
+        {top:720, left:340},
+        {top:720, left:320},
+        {top:720, left:300},
+        {top:720, left:280},
+        {top:720, left:260},
+        {top:720, left:240},
+        {top:720, left:220},
+        {top:720, left:200},
+        {top:720, left:600},
+        {top:720, left:640},
+        {top:720, left:580},
+        {top:720, left:560},
+        {top:720, left:540},
         //row 13
         {top:740, left:60},
         {top:740, left:140},
@@ -907,6 +958,11 @@ $(document).ready(function(){
         {top:740, left:860},
         {top:740, left:900},
         {top:740, left:520},
+        {top:740, left:200},
+        {top:740, left:180},
+        {top:740, left:160},
+        {top:740, left:600},
+        {top:740, left:640},
         //row 14
         {top:760, left:60},
         {top:760, left:140},
