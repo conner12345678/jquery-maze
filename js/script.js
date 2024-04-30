@@ -831,14 +831,36 @@ $(document).ready(function(){
         {top:540, left:940},
         {top:540, left:980},
         //row 4
-        {top:560, left:}
+        {top:560, left:980},
         //row 5
         {top:580, left:940},
         {top:580, left:980},
         //row 6
+        {top:600, left:940},
+        {top:600, left:920},
+        {top:600, left:900},
+        {top:600, left:880},
+        {top:600, left:840},
+        {top:600, left:820},
+        {top:600, left:800},
+        {top:600, left:780},
+        {top:600, left:760},
         //row 7
+        {top:620, left:980},
+        {top:620, left:760},
         //row 8
-        //row 9
+        {top:640, left:980},
+        {top:640, left:960},
+        {top:640, left:940},
+        {top:640, left:920},
+        {top:640, left:900},
+        {top:640, left:880},
+        {top:640, left:860},
+        {top:640, left:840},
+        {top:640, left:820},
+        {top:640, left:800},
+        {top:640, left:760},
+        //row 9 
         //row 10
         //row 11
         {top:700, left:60},
@@ -846,8 +868,10 @@ $(document).ready(function(){
         {top:700, left:100},
         {top:700, left:120},
         {top:700, left:140},
+        {top:700, left:760},
         //row 12
         {top:720, left:60},
+        {top:720, left:760},
         //row 13
         {top:740, left:60},
         {top:740, left:140},
