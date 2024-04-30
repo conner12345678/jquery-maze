@@ -53,4 +53,8 @@ body{
     height: 20px;
     background-color: blue;
     position: absolute;
+    transition: all 1s ease;
+    #s_beam {
+        transition: all .5s ease;
+    }
 }
