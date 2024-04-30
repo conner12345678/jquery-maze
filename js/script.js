@@ -66,10 +66,15 @@ $(document).ready(function(){
                     $('#walls2').remove()
                     $('#walls3').remove()
                     $('#walls4').remove()
+                    $('#end').css('top', '220px')
+                    $('#end').css('left', '480px')
                     $('#player').css('top', playerY + 'px')
                     $('#player').css('left', playerX + 'px')
                     win = 0
                     final = 2000
+                    for (let index = 0; index < wall_coordinates.length; index++){
+                        $('#wall' + index).css('visibility', 'hidden')
+                    }
                 }, 500);
                 start = 0
                 $('#leaderboard').append('<h1>Points:' + final + '</h1>')
