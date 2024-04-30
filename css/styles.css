@@ -14,7 +14,7 @@ body {
   background-color: rgb(43, 43, 43);
 }
 
-.wall, #start, #end {
+.wall, #end {
   width: 20px;
   height: 20px;
   border: 0.5px solid rgb(87, 87, 87);
@@ -42,15 +42,10 @@ body {
   left: 160px;
 }
 
-#start {
-  background-color: green;
-  top: 20px;
-  left: 20px;
-}
-
 #end {
   background-image: url(../exit.webp);
   background-size: contain;
+  border: none;
   background-color: rgba(4, 255, 0, 0.374);
   box-shadow: 0 0 10px rgba(4, 255, 0, 0.374), 0 0 20px rgba(4, 255, 0, 0.374), 0 0 30px rgba(4, 255, 0, 0.374);
   top: 220px;
