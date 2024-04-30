@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //maze size/dimention
-    var maze_height = 1200
+    var maze_height = 800
     var maze_width = 1200
     var player_dir = 3
 
@@ -27,7 +27,17 @@ $(document).ready(function(){
             //Check to see if the player reaches the end
             if(playerX === 480 && playerY === 220){
                 alert("congradulations you made it through the first level")
-                $('#end').css('top', '')
+                $('#end').css('top', '480px')
+                $('#end').css('left', '960px')
+                $('#maze').append('<div class="wall" id="wall1' + '" style="top: ' + 220 + 'px; left: ' + 460 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="wall2' + '" style="top: ' + 220 + 'px; left: ' + 480 + 'px;"></div>')
+            }
+            if(playerX === 960 && playerY == 480){
+                alert("Congradulations you made it through level two! Here is the final stretch...")
+                $('#end').css('top', '760px')
+                $('#end').css('left', '100px')
+                $('#maze').append('<div class="wall" id="wall3' + '" style="top: ' + 480 + 'px; left: ' + 960 + 'px;"></div>')
+                $('#maze').append('<div class="wall" id="wall4' + '" style="top: ' + 460 + 'px; left: ' + 960 + 'px;"></div>')
             }
         }
     }
@@ -795,7 +805,49 @@ $(document).ready(function(){
         {top:440, left:1160},
         //row 24
         {top:460, left:940},
-        {top:460, left:980}
+        {top:460, left:980},
+
+        //third
+
+        //row 1
+        {top:500, left:940},
+        {top:500, left:980},
+        //row 2
+        {top:520, left:940},
+        {top:520, left:980},
+        //row 3
+        {top:540, left:940},
+        {top:540, left:980},
+        //row 4
+        {top:560, left:}
+        //row 5
+        {top:580, left:940},
+        {top:580, left:980},
+        //row 6
+        //row 7
+        //row 8
+        //row 9
+        //row 10
+        //row 11
+        {top:700, left:60},
+        {top:700, left:80},
+        {top:700, left:100},
+        {top:700, left:120},
+        {top:700, left:140},
+        //row 12
+        {top:720, left:60},
+        //row 13
+        {top:740, left:60},
+        {top:740, left:140},
+        //row 14
+        {top:760, left:60},
+        {top:760, left:140},
+        //row 15
+        {top:780, left:60},
+        {top:780, left:80},
+        {top:780, left:100},
+        {top:780, left:120},
+        {top:780, left:140},
     ]
 
     for(var i = 0; i < wall_coordinates.length; i++){
