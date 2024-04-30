@@ -8,13 +8,14 @@ body{
     margin: 20px auto;
     width: 1200px;
     height: 800px;
-    border: 2px solid black;
+    border: 2px solid rgb(87, 87, 87);
     position: relative;
     background-color: rgb(43, 43, 43);
 }
 .wall, #start, #end{
     width: 20px;
     height: 20px;
+    border: 0.5px solid rgb(87, 87, 87);
     background-image: url(../block.jpg);
     background-size: contain;
     position: absolute;
